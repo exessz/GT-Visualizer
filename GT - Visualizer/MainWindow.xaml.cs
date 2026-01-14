@@ -19,7 +19,6 @@ namespace GT___Visualizer
 
     public partial class MainWindow : Window
     {
-
         // GT Visualizer: Guitar string (and more) visualizer using WPF
         // Each string vibrates when a number key (1-6) is pressed or all at once with Space
 
@@ -27,7 +26,6 @@ namespace GT___Visualizer
         private AudioCapture audioCapture;
         private StringAnimator stringAnimator;
         private FrequencyAnalyzer frequencyAnalyzer;
-
 
 
 
@@ -60,6 +58,13 @@ namespace GT___Visualizer
             audioCapture.OnStringDetected += HandleStringDetection;
             audioCapture.Start(0);
         }
+
+        private void OpenTuner (object sender, RoutedEventArgs e)
+        {
+            TunerWindow tuner = new TunerWindow(audioCapture);
+            tuner.ShowDialog();
+        }
+
         private void HandleStringDetection(int stringIndex)
         {
             stringAnimator.ActivateString(stringIndex);

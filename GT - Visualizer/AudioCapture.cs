@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace GT___Visualizer
 {
-    internal class AudioCapture
+    public class AudioCapture
     {
         public event Action<float> OnAmplitudeDetected;
         public event Action<int> OnStringDetected;
+        public event Action<float> OnFrequencyDetected;
 
         private WaveInEvent waveIn;
 
@@ -32,7 +33,7 @@ namespace GT___Visualizer
         {
             float maxAmplitude = 0;
             int sampleIndex = 0;
-            float[] fftBuffer = new float[16384];
+            float[] fftBuffer = new float[32768];
 
             for (int i = 0; i < e.BytesRecorded; i += 2)
             {
@@ -47,6 +48,7 @@ namespace GT___Visualizer
             }
 
             float frequency = frequencyAnalyzer.GetDominantFrequency(fftBuffer, 44100);
+            OnFrequencyDetected?.Invoke(frequency);
 
             int stringIndex = GetStringIndex(frequency);
 
@@ -59,6 +61,7 @@ namespace GT___Visualizer
                     OnStringDetected?.Invoke(stringIndex);
                 }
             }
+
         }
 
         private int GetStringIndex(float frequency)

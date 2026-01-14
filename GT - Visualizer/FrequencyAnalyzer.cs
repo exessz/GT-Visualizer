@@ -20,16 +20,13 @@ namespace GT___Visualizer
             }
             Fourier.Forward(complexSamples);
 
-
             int maxIndex = 22;
             double maxMagnitude = 0;
-
 
             for (int i = 22; i < 400; i++)
             {
                 double magnitude = Complex.Abs(complexSamples[i]);
                 double WMagnitude = magnitude * (1.0 / Math.Pow(i / 22.0,0.7));
-
 
                 if (WMagnitude > maxMagnitude)
                 {

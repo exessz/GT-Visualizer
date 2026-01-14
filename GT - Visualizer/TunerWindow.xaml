@@ -1,0 +1,34 @@
+﻿<Window x:Class="GT___Visualizer.TunerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GT___Visualizer"
+        mc:Ignorable="d"
+        Title="TunerWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas x:Name="DrawingCanvas" Background="Black"/>
+        <TextBlock x:Name="NoteText"
+                    Text="--"
+                    FontSize="80"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="White"/>
+        
+        <TextBlock x:Name="FrequencyText"
+                    Text="0.0 Hz"
+                    FontSize="24"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0,100,0,0"
+                    Foreground="LightGray"/>
+
+        <TextBlock x:Name="CentsText"
+                    Text="0 cents"
+                    FontSize="32"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0,150,0,0"
+                    Foreground="Cyan"/>
+    </Grid>
+</Window>

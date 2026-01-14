@@ -8,5 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Canvas x:Name="DrawingCanvas" Background="Black"/>
+        <Button Content="Tuner" Width="100" Height="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Click="OpenTuner"></Button>
     </Grid>
 </Window>
