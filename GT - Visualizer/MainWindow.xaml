@@ -7,7 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Canvas x:Name="DrawingCanvas" Background="Black"/>
-        <Button Content="Tuner" Width="100" Height="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Click="OpenTuner"></Button>
+        <Canvas x:Name="DrawingCanvas" Background="#1A0505"/>
+        <Button Content="⊙"
+                Width="50"
+                Height="40"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,0,10,10"
+                Background="#330000"
+                Foreground="#FF3333"
+                BorderBrush="Red"
+                BorderThickness="2"
+                FontFamily="Consolas"
+                FontSize="24"
+                FontWeight="DemiBold"
+                Click="OpenTuner"></Button>
+
+        <Button Content="⚙"
+                Width="50"
+                Height="40"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="10"
+                Background="#330000"
+                Foreground="#FF3333"
+                BorderBrush="Red"
+                BorderThickness="2"
+                FontFamily="Consolas"
+                FontSize="16"
+                FontWeight="DemiBold"
+                Click="OpenSettings"></Button>
     </Grid>
 </Window>

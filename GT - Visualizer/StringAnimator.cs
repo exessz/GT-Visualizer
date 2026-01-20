@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Windows.Media;
+using System.Windows;
 
 namespace GT___Visualizer
 {
@@ -37,7 +38,13 @@ namespace GT___Visualizer
                 horizontalLine.X2 = endX;
                 horizontalLine.Y2 = startY + i * spacing;
 
-                horizontalLine.Stroke = Brushes.Red;
+                LinearGradientBrush gradientBrush = new LinearGradientBrush();
+                gradientBrush.StartPoint = new Point(0, 0.5);
+                gradientBrush.EndPoint = new Point(1, 0.5);
+                gradientBrush.GradientStops.Add(new GradientStop(Colors.Red, 0.0));
+                gradientBrush.GradientStops.Add(new GradientStop(Colors.DarkOrange, 1.0));
+
+                horizontalLine.Stroke = gradientBrush;
                 horizontalLine.StrokeThickness = 2;
 
                 strings[i] = horizontalLine;

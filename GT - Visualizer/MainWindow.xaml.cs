@@ -65,6 +65,12 @@ namespace GT___Visualizer
             tuner.ShowDialog();
         }
 
+        private void OpenSettings(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow settings = new SettingsWindow();
+            settings.ShowDialog();
+        }
+
         private void HandleStringDetection(int stringIndex)
         {
             stringAnimator.ActivateString(stringIndex);
